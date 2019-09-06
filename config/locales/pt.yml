@@ -1,0 +1,6 @@
+# encoding: UTF-8
+# pt-BR translations for Devise
+pt:
+  login: "Matrícula"
+  password: "Senha"
+  remember_me: "Lembar-me"
