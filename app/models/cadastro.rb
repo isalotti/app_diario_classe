@@ -1,0 +1,3 @@
+class Cadastro < ApplicationRecord
+    
+end

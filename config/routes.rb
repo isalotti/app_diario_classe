@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  #Cadastro de usuários
+  resource :cadastros
   #ISBG
   devise_for :users
            #  :controllers => {:sessions=> 'users/sessions'}
