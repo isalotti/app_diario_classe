@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   #Cadastro de usuários
-  resource :cadastros
-  #ISBG
+  # - Atenção : 'resouces' com 's' possui rota automática para index! No singular, não (vai para show)
+  resources :cadastros
+ # get 'cadastros/index'
+
+
   devise_for :users
            #  :controllers => {:sessions=> 'users/sessions'}
   #get 'home/index'

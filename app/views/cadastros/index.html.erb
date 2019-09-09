@@ -1,0 +1,22 @@
+<h1>Diário de Classe</h1> <br/>
+
+<h2> Usuários cadastrados </h2>
+
+<table>
+    <tr>
+        <th>Matrícula</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Tipo</th>
+    </tr>
+
+    <% @cadastros.each do |usuario| %>
+    <tr>
+        <td><%= usuario.matricula%></td>
+        <td><%= usuario.nome%></td>
+        <td><%= usuario.email%></td>
+        <td><%= usuario.tipo%></td>
+    </tr>
+    <% end %>
+</table>
+<%= link_to "Início", root_path %>
