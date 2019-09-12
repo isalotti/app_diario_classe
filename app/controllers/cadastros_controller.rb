@@ -1,11 +1,12 @@
 class CadastrosController < ApplicationController
     
+    helper CadastroHelper  
+
     def index
       @cadastros = User.all
-      puts "-index"
     end
     def show
-      #TODO: verificar route deveria ir p/ index!
+      @cadastro = User.find(params[:id])
     end
 
     def new
@@ -17,23 +18,28 @@ class CadastrosController < ApplicationController
     end
 
     def create
-        @cadastro = User.new(params[:cadastro])
-
-        @cadastro.save
+        @cadastro = User.new(cadastro_params)
         
+        puts "----- entra cadastro.save #{@cadastro}"
+        @cadastro.save
         if @cadastro.save
-            redirect_to @cadastro
+            redirect_to cadastros_path
+            puts "-----cadastro.save"
           else
+            puts "-----nao salvou"
             render :new
         end
     end
 
     def update
+      puts "----- entra update.save #{@cadastro}"
       @cadastro = User.find(params[:id]) 
-
-      if @cadastro.update(cadastro_params_adm)
-        redirect_to @cadastro
+       puts "-------update  #{@cadastro}"
+      if @cadastro.update(cadastro_params)
+        redirect_to cadastros_path
+        puts "--------cadastro.update"
       else
+        puts "--------cdastro nao editou!"
         render :edit
       end 
 
@@ -41,19 +47,18 @@ class CadastrosController < ApplicationController
 
     def destroy
         @cadastro = User.find(params[:id])
-
+        puts "---destroy id #{@cadastro.id}"
         @cadastro.destroy
 
         redirect_to cadastros_path
     end
-    
-
+  
 
     private
 
     #Usuários administradores realizam cadastro
-    def cadastro_params_adm
-      params.require(:cadastro).permit(:email, :tipo, :matricula, :nome)
+    def cadastro_params
+      params.require(:user).permit(:email, :matricula, :nome , :password , :tipo)
     end
     
 end

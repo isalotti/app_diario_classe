@@ -1,0 +1,62 @@
+<%= form_with model: @cadastro, url: url , method: method  do |form|  %>     
+    <% if @cadastro.errors.any? %>
+        <div id="error">
+            <h4>
+                <%= pluralize(@cadastro.errors.count, "Erro :", plural: "Erros :")%>
+            </h4>
+            <ul>
+                <% @cadastro.errors.full_messages.each do |error|%>
+                    <li>
+                        <%= error %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    <div class="div_table">
+        <div class="div_tr">
+            <div class="div_td_right"> <%= form.label t('login') %> </div>
+            <div class="div_td_left"> <%= form.text_field :matricula ,autofocus: true , disabled: is_disabled %> </div>
+        </div>
+        <div class="div_tr">
+            <div class="div_td_right"> <%= form.label t('nome')%> </div>
+            <div class="div_td_left"> <%= form.text_field :nome , disabled: is_disabled%> </div>
+        </div>
+        <div class="div_tr">
+            <div class="div_td_right"> <%= form.label t('email')%> </div>
+            <div class="div_td_left"> <%= form.text_field :email ,  autocomplete: "email" , disabled: is_disabled%> </div>
+        </div>
+        <% if @cadastro.new_record? %>
+            <div class="div_tr">
+                <div class="div_td_right"> <%= form.label t('password') %> </div>
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %>
+                <div class="div_td_left"> <%= form.password_field :password, autocomplete: "new-password" %> </div>
+            </div>
+
+            <div class="div_tr">
+                <div class="div_td_right"> <%= form.label t('password_confirmation') %> </div>
+                <div class="div_td_left"> <%= form.password_field :password_confirmation, autocomplete: "new-password" %> </div>
+            </div>
+        <% end %>
+        <div class="div_tr">
+            <div class="div_td_right"> <%= form.label t('tipo')%> </div>
+            <!--TODO: dropdownlist vai aqui!-->
+        </div>
+    </div>
+
+        <br/>
+    <% unless is_disabled %>
+    <div class="div_table">
+        <div class="div_tr">
+            <%= form.submit t('enviar'), class: "submit"%>
+        </div>
+    </div>
+    <% end %>
+<% end %>
+<br/>
+<div class="div_table">
+    <%= link_to "Início", root_path %>
+</div>

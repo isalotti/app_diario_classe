@@ -1,38 +1,50 @@
-<h2>Sign up</h2>
+<h2>Cadastro de usuário</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<div class="div_table">
   <!--ISBG - Campos novos -->
-  <div class="field">
-    <%= f.label :matricula %><br/>
-    <%= f.text_field :matricula %>
+  <div class="div_tr">
+    <div class="div_td_right"> <%= f.label :matricula %> </div>
+    <div class="div_td_left"> <%= f.text_field :matricula , autofocus: true %> </div>
   </div>
- 
-  <!--ISBG - Campos novos -->
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email,  autocomplete: "email" %>
-  <!--  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
--->
+  <!--Campos novos (inicio)-->
+  <div class="div_tr">
+    <div class="div_td_right"> <%= f.label :nome %> </div>
+    <div class="div_td_left"> <%= f.text_field :nome %> </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <!--Campos novos (fim)-->
+  <div class="div_tr">
+    <div class="div_td_right"> <%= f.label :email %> </div>
+    <div class="div_td_left"> <%= f.email_field :email,  autocomplete: "email" %> </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="div_tr">
+    <div class="div_td_right"> 
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+    </div>
+    <div class="div_td_left"> <%= f.password_field :password, autocomplete: "new-password" %></div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="div_tr">
+    <div class="div_td_right"> <%= f.label :password_confirmation %> </div>
+    <div class="div_td_left"> <%= f.password_field :password_confirmation, autocomplete: "new-password" %> </div>
   </div>
+  <!--Campos novos (inicio)-->
+  <div class="div_tr">
+    <div class="div_td_right"> <%= f.label :tipo %> </div>
+    <!--TODO: dropdwonlist aqui -->
+  </div>
+</div>
+ <div class="div_table">
+  <!--Campos novos (fim)-->
+  <div class="div_tr">
+    <%= f.submit t('criar_usuario') , class: "submit" %>
+  </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>

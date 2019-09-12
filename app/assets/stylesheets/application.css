@@ -13,3 +13,110 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+    background-color: lightcyan;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+
+}
+/*Headers*/
+ h1 {
+     color: darkblue;
+     text-align: center;
+ }
+ h2{
+    color: black;
+    text-align: center;
+ }
+ h3{
+    color: midnightblue;
+    text-align: left;
+ }
+/* Div */
+ div{
+     display: block;
+     position: relative;
+     margin: auto;
+ }
+ /* Table */
+ table {
+     border-collapse: collapse;
+     border-color: dimgray;
+     border-style: solid;
+     border-width: 0.1em;
+     margin: 0 auto;
+ }
+td {
+    padding: 0.5em;
+    border-color: dimgray;
+    border-style: solid;
+    border-width: 0.1em;
+ }
+th{
+    padding: 0.5em;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-width: 0.1em;
+ }
+ p {
+    display: block;
+    padding: 0.5em;
+    margin : 0.5em; 
+ }
+
+/* Input */
+input {
+    display: inline-block;
+    height: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: dimgray;
+}
+input.textarea{
+    width: 15em; 
+}
+input.submit{
+    width: 12em;
+    height: 2.5em;
+    border-radius: 4px;
+    border-color: navy;
+    background-color: navy;
+    color : white;
+}
+/* Class*/
+.center{
+     text-align: center;
+ }
+.left {
+     text-align: left;
+ }
+ .right {
+     text-align: right;
+ }
+.error {
+     display: block;
+     color: red;
+}
+/*Div para formulários*/
+.div_table {
+    display: table;
+    position: relative;
+    margin: auto;
+    border-collapse: separate; 
+}
+.div_tr {
+    display: table-row;
+}
+.div_td_right {
+    display: table-cell;
+    text-align: right;
+}
+.div_td_left{
+    display: table-cell;
+    text-align: left;
+}

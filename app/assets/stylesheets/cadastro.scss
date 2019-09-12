@@ -1,3 +1,28 @@
 // Place all the styles related to the Cadastro controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Cabeçalho - Campos especiais:
+th.matricula{
+    width: 12%;
+}
+th.nome{
+    width: 34%;
+}
+th.email {
+    width: 15%;
+}
+th.tipo {
+    width: 14%;
+}
+th.action {
+    width: 8px;
+}
+//Linha
+tr:hover{
+    background-color: aquamarine;
+}
+//Campo
+td.center {
+    text-align: center;
+}

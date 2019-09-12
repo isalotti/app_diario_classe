@@ -1,9 +1,3 @@
-<h1>Diário de Classe</h1> <br/>
+<h2>Editar informações do usuário</h2>
 
-<h1>Editar informações do usuário</h1>
-
-<%= form_with scope: :cadastro, url: edit_cadastro_path ,local: true do |form| %>
-
-<%= end %>
-
-<%= link_to "Início", root_path %>
+<%= render partial: 'form' , locals: {url: cadastro_path, method: :put, is_disabled: false}%>

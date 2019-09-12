@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   #Cadastro de usuários
   # - Atenção : 'resouces' com 's' possui rota automática para index! No singular, não (vai para show)
   resources :cadastros
- # get 'cadastros/index'
 
-
-  devise_for :users
-           #  :controllers => {:sessions=> 'users/sessions'}
-  #get 'home/index'
+  devise_for :users ,
+             controllers: {registrations: 'users/registrations'}  #redireciona para controle customizado
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Redireciona para o login sempre que for para a página inicial

@@ -1,22 +1,51 @@
-<h1>Diário de Classe</h1> <br/>
-
 <h2> Usuários cadastrados </h2>
 
+<div >
 <table>
     <tr>
-        <th>Matrícula</th>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Tipo</th>
+        <th class="matricula">Matrícula</th>
+        <th class="nome">Nome</th>
+        <th class="email">Email</th>
+        <th class="tipo">Tipo</th>
+        <th class="action"></th>
+        <th class="action"></th>
+        <!--
+        <th class="action"></th>
+        -->
     </tr>
 
-    <% @cadastros.each do |usuario| %>
+    <% @cadastros.each do |cadastro| %>
     <tr>
-        <td><%= usuario.matricula%></td>
-        <td><%= usuario.nome%></td>
-        <td><%= usuario.email%></td>
-        <td><%= usuario.tipo%></td>
+        <td>
+            <%= cadastro.matricula%>
+        </td>
+        <td>
+            <%= cadastro.nome%>
+        </td>
+        <td>
+            <%= cadastro.email%>
+        </td>
+        <td>
+            <%= cadastro.tipo%>
+        </td>
+        <td class="center">
+            <%= link_to "Visualizar", cadastro_path(cadastro) %>
+        </td>
+        <td class="center">
+            <%= link_to "Editar", edit_cadastro_path(cadastro)%>
+        </td>
+        <!--TODO: validar se é usuário corrente
+        <td class="center">
+            <%= link_to "Excluir", cadastro_path(cadastro),
+                                    method: :delete,
+                                    data: {confirm: "Tem certeza que deseja excluir o usuário?"}%>
+        </td>
+        -->
     </tr>
     <% end %>
 </table>
-<%= link_to "Início", root_path %>
+<div>
+<br/>
+<div class="div_table">
+    <%= link_to "Início", root_path %>
+</div>    

@@ -2,5 +2,11 @@
 # pt-BR translations for Devise
 pt:
   login: "Matrícula"
+  nome: "Nome"
+  tipo: "Tipo"
+  email: "Email"
   password: "Senha"
+  password_confirmation: "Confirmação da senha"
   remember_me: "Lembar-me"
+  criar_usuario: "Criar usuário"
+  enviar: "Enviar"

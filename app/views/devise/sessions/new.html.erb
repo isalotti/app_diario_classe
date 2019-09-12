@@ -1,29 +1,31 @@
-<h1>Diário de classe</h1>
-
-
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label t('login') %> 
-    <%= f.text_field :login %>
-  </div>
+<div class="div_table">
+  <div class="div_tr">
+      <div class="div_td_right">  <%= f.label t('login') %> </div>
+      <div class="div_td_left">  <%= f.text_field :login %> </div>
+  </div> 
 
-  <div class="field">
-    <%= f.label t('password') %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="div_tr">
+      <div class="div_td_right">  <%= f.label t('password') %> </div>
+      <div class="div_td_left"> <%= f.password_field :password, autocomplete: "current-password" %> </div>
   </div>
-
+</div>
+<div class="div_table">
+  <div class="div_tr">
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label t('remember_me') %>
-    </div>
+      <div class="div_td_right"> <%= f.check_box :remember_me %> </div>
+      <div class="div_td_left"> <%= f.label t('remember_me') %> </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Entrar" %>
   </div>
+</div>
+
+<div class="div_table">
+    <div class="div_tr">
+      <%= f.submit "Entrar" , class: "submit" %>
+    </div>
+</div>
 <% end %>
 
+<br/>
 <%= render "devise/shared/links" %>
